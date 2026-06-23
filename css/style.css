@@ -529,12 +529,15 @@ body.modal-open{overflow:hidden}
 @media (max-width:860px){
   /* --- nav bar --- */
   .the-nav{left:14px;right:14px;transform:none;width:auto;top:14px;gap:12px;justify-content:space-between;animation:none}
-  .the-nav .group{height:56px}
-  .the-nav .content{padding:0 16px;gap:0;height:56px}
+  .the-nav .group{height:54px;background:var(--pill);border:1px solid rgba(255,255,255,.1);border-radius:16px}
+  .the-nav .group .bg{display:none}            /* hide desktop chevron pill */
+  .the-nav .content{padding:0 16px 0 9px;gap:9px;height:54px}
+  .the-nav .logo{width:38px;height:38px}
+  .the-nav .wordmark{font-size:18px}
   .the-nav .nav-link,.the-nav .dropdown{display:none}
   .the-nav .signup{display:none}
   .nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;
-    width:56px;height:56px;padding:0 16px;border-radius:18px;cursor:pointer;
+    width:54px;height:54px;padding:0 15px;border-radius:16px;cursor:pointer;
     background:var(--pill);border:1px solid rgba(255,255,255,.1)}
   .nav-toggle span{display:block;height:2.5px;width:100%;background:var(--cream);border-radius:2px;transition:transform .25s,opacity .2s}
   .nav-toggle.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
