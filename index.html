@@ -37,7 +37,19 @@
       </div>
     </div>
     <a class="signup" href="#admissions">Apply Now</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
+
+  <!-- mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav>
+      <a href="#programs" class="mm-link">Programs</a>
+      <a href="#research" class="mm-link">Research</a>
+      <a href="#schools" class="mm-link">Schools</a>
+      <a href="#admissions" class="mm-link">Admissions</a>
+      <a href="#admissions" class="mm-apply">Apply Now</a>
+    </nav>
+  </div>
 
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -710,7 +722,7 @@
 
     // ---- wire triggers ----
     function on(sel,fn){ document.querySelectorAll(sel).forEach(function(el){ el.addEventListener('click',function(e){ e.preventDefault(); fn(el); }); }); }
-    on('.signup',function(){ openModal('apply'); });
+    on('.signup, .mm-apply',function(){ openModal('apply'); });
     on('.hero .btn-ghost',function(){ openModal('apply'); });
     on('#admissions .download-extension',function(){ openModal('apply'); });
     on('#admissions .btn-ghost',function(){ openModal('tour'); });
@@ -917,6 +929,15 @@
         setTimeout(finish,2300);
       }
     }
+    // mobile menu toggle
+    var tog=document.querySelector('.nav-toggle'), mm=document.getElementById('mobileMenu');
+    if(tog&&mm){
+      function setMenu(open){ tog.classList.toggle('active',open); mm.classList.toggle('open',open); mm.setAttribute('aria-hidden',open?'false':'true'); tog.setAttribute('aria-expanded',open?'true':'false'); document.body.classList.toggle('menu-open',open); }
+      tog.addEventListener('click',function(){ setMenu(!mm.classList.contains('open')); });
+      mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); });
+      document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&mm.classList.contains('open'))setMenu(false); });
+    }
+
     // cursor glow (desktop, fine pointer only)
     if(window.matchMedia && !matchMedia('(pointer:coarse)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
       var g=document.createElement('div'); g.className='cursor-glow'; document.body.appendChild(g);
