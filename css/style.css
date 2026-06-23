@@ -605,6 +605,9 @@ body.modal-open{overflow:hidden}
   .modal-card{padding:32px 22px}
   .modal-title{font-size:28px}
   .investors{gap:22px 34px}
+  /* footer giant wordmark: wrap to 2 lines, fit width, no top/right crop */
+  .footer-bigname{margin:48px 0 28px}
+  .footer-bigname span{white-space:normal;font-size:clamp(46px,15vw,104px);line-height:.92;letter-spacing:-.03em;padding-top:.06em}
 }
 
 /* ============ FINE MOBILE (≤520) ============ */
