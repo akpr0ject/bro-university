@@ -404,32 +404,43 @@
           <span class="wordmark">BRO University</span>
         </span>
         <p class="footer-tag">Decoding the human brain &mdash; and building the multi-disciplinary campus around it.</p>
+        <div class="footer-social">
+          <a class="soc" href="#" aria-label="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zM17.083 19.77h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a class="soc" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14M7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0"/></svg></a>
+          <a class="soc" href="mailto:hello@brouniversity.edu" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1m10 7.5L20.5 6h-17zM3 8.2V18h18V8.2l-9 6z"/></svg></a>
+        </div>
       </div>
       <nav class="footer-cols">
         <div class="footer-col">
           <h4>Schools</h4>
-          <a href="#schools">Neuroscience</a>
-          <a href="#schools">AI <span class="soon-tag">Soon</span></a>
-          <a href="#schools">Semiconductor <span class="soon-tag">Soon</span></a>
+          <a href="#schools"><span>Neuroscience</span></a>
+          <a href="#schools"><span>AI</span> <span class="soon-tag">Soon</span></a>
+          <a href="#schools"><span>Semiconductor</span> <span class="soon-tag">Soon</span></a>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
-          <a href="#programs">Programs</a>
-          <a href="#research">Research</a>
-          <a href="#admissions">Admissions</a>
-          <a href="#invest">Investors</a>
+          <a href="#programs"><span>Programs</span></a>
+          <a href="#research"><span>Research</span></a>
+          <a href="#admissions"><span>Admissions</span></a>
+          <a href="#invest"><span>Investors</span></a>
         </div>
         <div class="footer-col">
           <h4>Connect</h4>
-          <a href="mailto:hello@brouniversity.edu">Contact</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">X / Twitter</a>
+          <a href="mailto:hello@brouniversity.edu"><span>Contact</span></a>
+          <a href="#"><span>LinkedIn</span></a>
+          <a href="#"><span>X / Twitter</span></a>
         </div>
       </nav>
     </div>
+
+    <div class="footer-bigname" aria-hidden="true"><span>BRO&nbsp;UNIVERSITY</span></div>
+
     <div class="footer-base">
       <span>&copy; 2026 BRO University. All rights reserved.</span>
-      <span>Privacy &middot; Terms</span>
+      <span class="footer-legal"><a href="#">Privacy</a> &middot; <a href="#">Terms</a></span>
+      <button class="to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </button>
     </div>
   </footer>
 
@@ -937,6 +948,10 @@
       mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); });
       document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&mm.classList.contains('open'))setMenu(false); });
     }
+
+    // back to top
+    var toTop=document.querySelector('.to-top');
+    if(toTop) toTop.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
 
     // cursor glow (desktop, fine pointer only)
     if(window.matchMedia && !matchMedia('(pointer:coarse)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
